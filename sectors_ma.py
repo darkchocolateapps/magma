@@ -18,8 +18,8 @@ import yfinance as yf
 import pandas as pd
 from datetime import datetime, timedelta
 
-# Magnificent 7 stock tickers
-MAG7_TICKERS = ['XLK', 'XLF', 'XLV', 'XLY', 'XLC', 'XLI', 'XLP', 'XLE', 'XLU', 'XLRE', 'XLB']
+# SECTORS 
+SEC_TICKERS = ['XLK', 'XLF', 'XLV', 'XLY', 'XLC', 'XLI', 'XLP', 'XLE', 'XLU', 'XLRE', 'XLB']
 
 # Moving average periods
 MA_PERIODS = [8, 21, 50, 200]
@@ -76,7 +76,7 @@ def main():
     
     all_results = []
     
-    for ticker in MAG7_TICKERS:
+    for ticker in SEC_TICKERS:
         print(f"Fetching data for {ticker}...")
         result = get_moving_averages(ticker, MA_PERIODS)
         
@@ -116,7 +116,7 @@ def main():
     print(summary_df.to_string(index=False))
     
     # Optional: Save to CSV
-    output_file = 'mag7_moving_averages.csv'
+    output_file = 'spsec_moving_averages.csv'
     df_results.to_csv(output_file, index=False)
     print(f"\n\nData saved to: {output_file}")
     print("=" * 100)
